@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<body lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Platillos</title>
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* Estilos predeterminados */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 1.5em;
+            height: auto;
+        }
+        .table-container {
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            padding:15px;
+                }
+
+        .table-container th, .table-container td {
+            padding: 8px;
+        }
+
+        .table-container th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+
+        .action-buttons button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #2b6549;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 8px;
+
+        }
+
+        .action-buttons button:hover {
+            background-color: #1f4a37;
+        }
+
+        #message {
+            color: #2b6549;
+            font-weight: bold;
+        }
+
+        .dish-image {
+            width: 50px;
+            height: 50px;
+        }
+         
+    p {
+        font-size:15px;
+        color: #191919;
+    }
+    </style>
+</head>
+<body>
+    <table class="table-container">
+        <thead>
+            <tr>
+                <th>Platillo</th>
+                <th>Imagen</th>
+                <th>Descripción</th>
+                <th>Selección (en Medio Litro)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Platillo  -->
+            <tr class="dish-row">
+                <td>Enchiladas Verdes</td>
+                <td><img src="path_to_image1.jpg" alt="Imagen de Enchiladas" class="dish-image"></td>
+                <td>Deliciosas enchiladas bañadas en salsa verde con pollo deshebrado.</td>
+                <td class="amount">0</td>
+                <td class="action-buttons">
+                    <button onclick="incrementar(this)">+</button>
+                    <button onclick="decrementar(this)">-</button>
+                </td>
+            </tr>
+            <!-- Platillo especial -->
+            <tr class="dish-row special-dish">
+                <td>Filete Mignon</td>
+                <td><img src="path_to_image2.jpg" alt="Imagen de Filete Mignon" class="dish-image"></td>
+                <td>Filete mignon a la parrilla con salsa de champiñones.</td>
+                <td class="amount">0</td>
+                <td class="action-buttons">
+                    <button onclick="incrementarEspecial(this)">+</button>
+                    <button onclick="decrementar(this)">-</button>
+                </td>
+            </tr>
+            <!-- ... -->
+        </tbody>
+    </table>
+    <p>Total: <span id="total">0</span> Litros</p>
+    <p id="message"></p>
+<script src="/tabla-condiciones.js"></script>
+</body>
+</html>
